@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Клуб без GPT</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    header {
+      background-color: #111;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    main {
+      max-width: 700px;
+      margin: 2rem auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: #222;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    .cta {
+      background-color: #111;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .cta:hover {
+      background-color: #333;
+    }
+    .message-box {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e6e6e6;
+      border-radius: 8px;
+      display: none;
+    }
+    .lang-switch {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .lang-switch a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #555;
+    }
+    .lang-switch a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    function getLang() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('lang') || 'ru';
+    }
+    function switchLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+      });
+    }
+    window.onload = function () {
+      switchLang(getLang());
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1 data-lang="ru">Добро пожаловать в Клуб без GPT</h1>
+    <h1 data-lang="en">Welcome to the GPT-Free Club</h1>
+    <p data-lang="ru">Пора выйти из бесконечной ленты синтетической уверенности</p>
+    <p data-lang="en">Escape the infinite scroll of synthetic certainty</p>
+  </header>
+  <main>
+    <div class="lang-switch">
+      <a href="?lang=ru">Русский</a> | <a href="?lang=en">English</a>
+    </div>
+
+    <section data-lang="ru">
+      <h2>Зачем отказываться от ChatGPT?</h2>
+      <ul>
+        <li>Верни себе интуицию и неуверенность</li>
+        <li>Вырвись из цифровых петель дофамина</li>
+        <li>Заново услышь свой внутренний голос</li>
+        <li>Защити своё когнитивное суверенитет</li>
+      </ul>
+      <h2>Что мы предлагаем</h2>
+      <ul>
+        <li>Ежедневные ритуалы детокса от GPT</li>
+        <li>Оффлайн-челленджи по ведению дневника</li>
+        <li>Списки литературы без саммари</li>
+        <li>Живые сессии рефлексии и жалоб</li>
+      </ul>
+      <a href="https://t.me/your_channel" target="_blank" class="cta" onclick="document.getElementById('msg').style.display='block';">
+        ✊ Присоединяйся к сопротивлению — без промптов
+      </a>
+      <div id="msg" class="message-box">
+        Это, конечно, кек. Но если хочется про это поговорить — <a href="https://t.me/your_channel" target="_blank">пишите мне в телеграм</a>.
+      </div>
+    </section>
+
+    <section data-lang="en">
+      <h3>Why Quit ChatGPT?</h3>
+      <ul>
+        <li>Reclaim your uncertainty and intuition</li>
+        <li>Break free from digital dopamine loops</li>
+        <li>Rediscover your own voice and inner dialogue</li>
+        <li>Protect your cognitive sovereignty</li>
+      </ul>
+      <h3>What We Offer</h3>
+      <ul>
+        <li>Daily rituals for GPT detox</li>
+        <li>Offline journaling challenges</li>
+        <li>Reading lists with no summaries</li>
+        <li>Live group rants & reflection sessions</li>
+      </ul>
+      <a href="https://t.me/your_channel" target="_blank" class="cta" onclick="document.getElementById('msg-en').style.display='block';">
+        ✊ Join the Resistance – No Prompt Needed
+      </a>
+      <div id="msg-en" class="message-box">
+        Yeah, it's kind of a meme. But if you want to talk — <a href="https://t.me/your_channel" target="_blank">write me on Telegram</a>.
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p data-lang="ru">Клуб без GPT © 2025 | Не аффилирован с ИИ-гегемонией (пока что)</p>
+    <p data-lang="en">GPT-Free Club © 2025 | Not affiliated with any AI overlords (yet)</p>
+  </footer>
+</body>
+</html>
